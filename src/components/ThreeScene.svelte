@@ -77,6 +77,8 @@
         var loader = new GLTFLoader().setPath(modelPath);
         loader.load(modelFile, function (gltf) {
 
+          console.log(gltf)
+
           gltf.scene.traverse(function (child) {
 
             if (child.isMesh) {
@@ -109,6 +111,7 @@
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.setClearColor(0xFFFFFF, 0)
     container.appendChild(renderer.domElement);
+    renderer.domElement.style.position = 'fixed'
 
     var pmremGenerator = new THREE.PMREMGenerator(renderer);
     pmremGenerator.compileEquirectangularShader();
@@ -143,12 +146,13 @@
 
   }
 
-  // animate();
-  // requestAnimationFrame(animate);
-  // function animate() {
-  //   requestAnimationFrame(animate);
-  //   stats.begin();
+  animate();
+  requestAnimationFrame(animate);
 
-  //   stats.end();
-  // }
+  function animate() {
+    requestAnimationFrame(animate);
+    stats.begin();
+
+    stats.end();
+  }
 </script>
