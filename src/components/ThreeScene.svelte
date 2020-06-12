@@ -1,11 +1,11 @@
 <script>
-  import * as Stats from "stats.js";
+  // import * as Stats from "stats.js";
   import * as THREE from 'three';
 
   //FPS counter
-  const stats = new Stats();
-  stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-  document.body.appendChild(stats.dom);
+  // const stats = new Stats();
+  // stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+  // document.body.appendChild(stats.dom);
 
 
   import {
@@ -112,6 +112,7 @@
     renderer.setClearColor(0xFFFFFF, 0)
     container.appendChild(renderer.domElement);
     renderer.domElement.style.position = 'fixed'
+    // renderer.domElement.style.zIndex = 10
 
     var pmremGenerator = new THREE.PMREMGenerator(renderer);
     pmremGenerator.compileEquirectangularShader();
@@ -151,8 +152,8 @@
 
   function animate() {
     requestAnimationFrame(animate);
-    stats.begin();
+    // stats.begin();
 
-    stats.end();
+    // stats.end();
   }
 </script>
