@@ -8,4 +8,4 @@
 
 <Home></Home>
 
-<!-- <ThreeScene /> -->
+<ThreeScene />
